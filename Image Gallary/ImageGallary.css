@@ -1,0 +1,78 @@
+* {     /*Universal Selector*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;         /*If you add border in your div then your box size won't chage here*/
+}
+
+#wrapper{
+    height: 100vh;
+    overflow-x: hidden;         /*Horizontal Scroll Is locked*/
+    overflow-y: auto;              /*Vertical Scroll Is allowed*/
+}
+
+.container{
+    height: 100%;
+    max-width: 1200px;
+    margin: 0 auto;         /*Your Content will become in center*/
+    padding: 20px;
+}
+
+.container h1{
+    margin: 20px 0;     /*top and bottom*/
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 3rem;
+}
+
+.gallery{
+    display: flex;          /*Div becomes the flexbox*/
+    flex-wrap: wrap;    /*All elements comes under one by one*/
+    justify-content: space-between;
+}
+
+.card{
+    width: 32%;
+    position: relative;             /*Height will inherit with parent element 'card'*/
+    margin-bottom: 20px;
+    border-radius: 10px;        /*Image Border are little bit curv*/
+    overflow: hidden;           /*Hiding the Overflow Here*/
+}
+
+.card img{
+    height: 100%;       /*height is set according to parent element 'card'*/
+    width: 100%;
+    filter: grayscale(100%);        /*For black and white images*/
+    box-shadow: 0 0 20px #333;
+    object-fit: cover;
+}
+
+.card:hover{
+    transform: scale(1.03);         /*when you go to card then it increse by given value*/
+    filter: drop-shadow(0 0 10px #333);     /*it drops the shadow*/
+    transition: 0.3s;
+}
+
+.card:hover img{
+    filter: grayscale(0%);           /*For Colourful images*/
+}
+
+.card figcaption{
+    position: absolute;         /*For overlapping the text on image*/
+    bottom: 0;
+    left: 0;
+    padding: 25px;
+    width: 100%;        /*width of caption*/
+    height: 20%;
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    opacity: 0;         /*transperrency is 100% it doesn't seen until we drag the cursor on image*/
+    border-radius: 0 0 10px 10px;
+    background: linear-gradient(0deg, rgba(0, 0, 0.5) 0%, rgb(255,255,255));
+    transition: 0.3s;
+}
+
+.card:hover figcaption{
+    opacity: 1;     /*We see the text after drag cursor on image*/
+    transform: scale(1.03);
+}

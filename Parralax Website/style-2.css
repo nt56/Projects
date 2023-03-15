@@ -1,0 +1,97 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#wrapper{
+    height: 100vh;  /*height of erapper = view port height*/
+    overflow-x: hidden; /*x-axis not moves it stables*/
+    overflow-y: auto;   /*y-axis moves up-down*/
+    perspective: 10px;  /*For 3d purpose*/
+}
+
+.container{
+    position: relative; /*used because we have to use absolute*/
+    display: flex;  /*making container to flex*/
+    justify-content: center;    /*making text in center*/
+    align-items: center;
+    height: 100%;
+    transform-style: preserve-3d;
+    z-index: -1;
+}
+
+.background{
+    transform: translateZ(-40px) scale(5); /*40px laway from screen and increse image by scaling */
+}
+
+.foreground{
+    transform: translateZ(-20px) scale(3);  /*for zoom out and increase image size*/
+}
+
+.background, .foreground{
+    position: absolute;     /*For overlapping the images*/
+    height: 100%;
+    width: 100%;
+    z-index: -1;    /*content will be come in the image*/
+    object-fit: cover;  /*used to specify how an img/video should be resized to fit its container*/
+} 
+
+h1{
+    position: absolute;
+    font-size: 10rem;
+    top: 6rem;
+    color: white;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    letter-spacing: 4px;
+}
+
+section{
+    background-color: rgb(45, 45, 45);
+    color: white;
+    padding: 5rem 0;
+}
+
+.bg{
+    position: relative;
+    width: 100%;
+    background-attachment: fixed;   /*For fixed image*/
+    height: 500px;
+    background-size: cover; /*scaling an image to cover our screen viewport*/
+    background-position: center;
+}
+
+.bg1{   /*adding image using css and we defined class bg1 in html*/
+    background-image: url(sport-1.jpg);
+}
+
+.bg2{
+    background-image: url(sport-2.jpg);
+}
+
+.bg3{
+    background-image: url(sport-3.jpg);
+}
+
+.secHeading{
+    font-size: 5rem;
+    padding: 0 10rem;
+}
+
+.text{
+    font-size: 1.5rem;
+    padding: 0 10rem;
+    margin: 5rem 0;
+}
+
+.desc{
+    position: absolute; /*For overlapping the text on image*/
+    background-color: white;
+    padding: 0.5rem 2.5rem;
+    top: 50%;
+    left: 60%;
+    transform: translateX(-50%) translateX(-50%);
+    color: black;
+    font-size: 3.5rem;
+    font-weight: 600;
+}
