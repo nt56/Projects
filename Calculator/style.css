@@ -1,0 +1,39 @@
+body{
+    background-color: aqua;
+}
+
+.heading {
+    text-align: center;
+    font-style: normal;
+    font: bold;
+    font-size: xx-large;
+}
+
+.container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    width: 66px;
+    padding: 20px;
+    margin: 0 3px;
+    border: 2px solid black;
+    border-radius: 9px;
+    cursor: pointer;
+}
+
+.row {
+    margin: 10px 0;
+}
+
+.row input {
+    width: 291px;
+    margin: 0;
+    padding: 10px 38px;
+    border: 2px solid black;
+    border-radius: 5px;
+}
